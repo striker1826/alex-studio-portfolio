@@ -12,6 +12,12 @@ const SchedulePage = async () => {
     method: "GET",
   });
 
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error("API 요청 오류:", errorText);
+    console.log(`API 요청 실패: ${response.status}`);
+  }
+
   const { result: scheduleList }: { result: Schedule[] } = await response.json();
 
   return (
