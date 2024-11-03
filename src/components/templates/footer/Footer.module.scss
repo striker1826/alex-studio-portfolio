@@ -1,0 +1,20 @@
+.footer {
+  margin-top: 120px;
+  height: 100px;
+  width: 100%;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    margin-top: 40px;
+    font-size: 10px;
+    font-weight: 200;
+    height: 50px;
+  }
+}

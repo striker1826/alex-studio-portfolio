@@ -1,0 +1,93 @@
+.price_table {
+  width: 740px;
+  border-collapse: collapse;
+  background: #111;
+  color: #fff;
+  border-radius: 5px;
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 15px;
+    border-bottom: 0.5px solid #fff; /* 헤더 아래 가로선 */
+  }
+
+  tr:not(:last-child) td {
+    border-bottom: 0.5px solid #fff; /* 각 행의 아래에 가로선 */
+  }
+
+  td {
+    padding: 15px;
+    word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+    overflow-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .line_through {
+    text-decoration: line-through;
+  }
+}
+
+.price_table_mobile {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .price_table {
+    display: none;
+  }
+
+  .price_table_mobile {
+    display: block;
+    // width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    color: #fff;
+    border-radius: 5px;
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 15px 15px;
+      border-bottom: 0.5px solid #fff; /* 헤더 아래 가로선 */
+    }
+
+    tr:not(:last-child) td {
+      border-bottom: 0.5px solid #fff; /* 각 행의 아래에 가로선 */
+    }
+
+    td {
+      padding: 15px;
+      word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+      overflow-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+    }
+
+    td {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+
+    .bold {
+      font-weight: 700;
+    }
+
+    .line_through {
+      text-decoration: line-through;
+    }
+  }
+}

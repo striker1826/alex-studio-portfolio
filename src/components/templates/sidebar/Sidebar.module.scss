@@ -1,0 +1,97 @@
+.nav_bar {
+  display: flex;
+  padding: 10px 10px 20px 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 999 !important;
+  background: #111;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-whisper);
+
+  .nav_menu {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav_logo {
+    background: transparent;
+    width: 60px;
+    height: 40px;
+  }
+
+  &.open {
+    animation: navOpenSlide 1s forwards;
+  }
+
+  &.close {
+    animation: navCloseSlide 1s forwards;
+  }
+
+  .schedule {
+    color: #fff;
+  }
+
+  .sidebar_portfolio {
+    color: #fff;
+    font-family: 700;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-whisper);
+  }
+
+  .sidebar_schedule {
+    color: #fff;
+    font-family: 700;
+    font-size: 28px;
+  }
+
+  .nav_bar_close {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+
+  .portfolio_btn {
+    background: transparent;
+    text-align: left;
+    border: none;
+    outline: none;
+  }
+
+  .sidebar_portfolio {
+    color: #fff;
+    font-family: 700;
+    font-size: 28px;
+  }
+}
+
+@keyframes navOpenSlide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes navCloseSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

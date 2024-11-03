@@ -1,0 +1,566 @@
+.nav_bar {
+  display: none;
+}
+
+.layout {
+  position: relative;
+  display: flex;
+  width: 200vw;
+  height: 100vh;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  transform: translate(-25%);
+}
+
+.nav_portfolio {
+  display: none;
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+  position: absolute;
+  right: 25%;
+  top: 50%;
+  opacity: 0; /* 처음에는 보이지 않게 설정 */
+  animation: fadeIn 1s forwards;
+  animation-delay: 2.5s;
+  font-family: var(--font-whisper);
+}
+
+.black {
+  animation: leftSlide 1s forwards;
+}
+
+.white {
+  animation: rightSlide 1s forwards;
+}
+
+.none_display {
+  display: none;
+}
+
+.none_area {
+  width: 1px;
+}
+
+.logo {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: url("../assets/alex_logo.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: shrink 2s forwards;
+}
+
+.left {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .portfolio {
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    opacity: 0; /* 처음에는 보이지 않게 설정 */
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+    font-family: var(--font-whisper);
+  }
+}
+
+.right {
+  display: flex;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: devide 1s forwards;
+  animation-delay: 2s; /* 로고 애니메이션이 끝난 후 2초 대기 */
+  position: relative;
+
+  .portfolio {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    opacity: 0; /* 처음에는 보이지 않게 설정 */
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+    font-family: var(--font-whisper);
+  }
+}
+
+.nav {
+  // display: none;
+  position: fixed;
+  margin-right: 25%;
+  width: 200vw;
+  height: 50px;
+  top: 36px;
+  right: 52px;
+  color: #fff;
+  opacity: 0; /* 처음에는 보이지 않게 설정 */
+  animation: fadeIn 1s forwards;
+  animation-delay: 2.5s; /* devide 애니메이션 끝난 후 1초 대기 후 시작 (devide가 2초 대기 후 1초 실행되므로 4초) */
+  font-size: 26px;
+  font-weight: 500;
+  font-family: var(--font-whisper);
+
+  & p {
+    text-align: end;
+  }
+}
+
+.white_nav {
+  text-align: end;
+  z-index: 2;
+  position: fixed;
+  background: #111;
+  width: 100vw;
+  height: 100px;
+  padding-top: 36px;
+  padding-right: 52px;
+  top: 0;
+  right: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s; /* devide 애니메이션 끝난 후 1초 대기 후 시작 (devide가 2초 대기 후 1초 실행되므로 4초) */
+  font-size: 26px;
+  font-weight: 500;
+  font-family: var(--font-whisper);
+  opacity: 0;
+  color: #fff;
+}
+
+.black_nav {
+  z-index: 2;
+  padding-top: 36px;
+  position: fixed;
+  background: #fff;
+  width: 100vw;
+  height: 100px;
+  top: 0;
+  left: 52px;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s; /* devide 애니메이션 끝난 후 1초 대기 후 시작 (devide가 2초 대기 후 1초 실행되므로 4초) */
+  font-size: 26px;
+  font-weight: 500;
+  font-family: var(--font-whisper);
+  opacity: 0;
+  color: #111;
+}
+
+.left_button {
+  position: fixed;
+  top: 45%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transform: rotate(180deg);
+  cursor: pointer;
+  animation: fadeIn 1s forwards, moveLeftRight 3s ease-in-out infinite; /* 애니메이션 추가 */
+  animation-delay: 1s; /* devide 애니메이션 끝난 후 1초 대기 후 시작 */
+}
+
+.right_button {
+  opacity: 0;
+  position: fixed;
+  top: 45%;
+  right: 51%;
+  transform: translate(-50%, -50%);
+
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  animation: fadeIn 1s forwards, moveLeftRight 3s ease-in-out infinite; /* 애니메이션 추가 */
+  animation-delay: 1s; /* devide 애니메이션 끝난 후 1초 대기 후 시작 (devide가 2초 대기 후 1초 실행되므로 4초) */
+}
+
+@keyframes shrink {
+  0% {
+    width: 200vw; /* 애니메이션 시작 시 화면 꽉 차는 크기 */
+    height: 100vh;
+  }
+  100% {
+    width: 300px; /* 원래 크기 */
+    height: 200px;
+  }
+}
+
+@keyframes devide {
+  0% {
+    background: #fff;
+  }
+  100% {
+    background: #111;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes leftSlide {
+  0% {
+    transform: translateX(-25%); /* 시작 시 화면의 절반만 차지 */
+  }
+
+  100% {
+    transform: translateX(-50%); /* 전체 화면을 차지 */
+  }
+}
+
+@keyframes rightSlide {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveLeftRight {
+  0%,
+  100% {
+    transform: translateX(0); /* 원래 위치 */
+  }
+  50% {
+    transform: translateX(10px); /* 오른쪽으로 5px 이동 */
+  }
+}
+
+@keyframes navOpenSlide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes navCloseSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes halfShrink {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .none_flipped {
+    transform: rotateY(0deg); // 카드가 뒤집힐 때의 변환
+  }
+
+  .white {
+    animation: none;
+
+    .left {
+      padding: 0 30px;
+
+      .right_button {
+        display: none;
+      }
+
+      .nav_portfolio {
+        display: block;
+        top: 15px;
+        left: 30px;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 1s;
+      }
+
+      .first_layout {
+        margin-top: 100px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 2s;
+
+        .item_wrap {
+          width: 100%;
+          height: 200px;
+
+          .card {
+            &:hover:not(.flipped) {
+              transform: rotateY(0deg);
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      opacity: 1;
+      animation: halfShrink 1s forwards;
+    }
+  }
+
+  .black {
+    animation: none;
+
+    .nav_portfolio {
+      color: #fff;
+      display: block;
+      top: 15px;
+      left: 30px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1s;
+    }
+
+    .dark_layout {
+      width: 100%;
+      margin-top: 100px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 200px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 2s;
+
+      .item_wrap {
+        width: 100%;
+        height: 200px;
+
+        .darkCard {
+          &:hover:not(.flipped) {
+            transform: rotateY(0deg);
+          }
+        }
+      }
+    }
+
+    .right {
+      padding: 0 30px;
+    }
+
+    .left_button {
+      display: none;
+    }
+
+    .left {
+      animation: halfShrink 1s forwards;
+    }
+  }
+
+  .white_nav {
+    display: none;
+  }
+
+  .black_nav {
+    display: none;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    transform: none;
+
+    .hamburger {
+      z-index: 1;
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      top: 15px;
+      right: 25px;
+      background-image: url("../assets/camera_cursor.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0;
+
+      animation: fadeIn 1s forwards;
+      animation-delay: 1.5s;
+    }
+  }
+
+  .nav_bar {
+    display: flex;
+    padding: 10px 10px 20px 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 999 !important;
+    background: #111;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-whisper);
+
+    .nav_menu {
+      margin-top: 7px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .nav_logo {
+      background: transparent;
+      width: 60px;
+      height: 40px;
+    }
+
+    &.open {
+      animation: navOpenSlide 1s forwards;
+    }
+
+    &.close {
+      animation: navCloseSlide 1s forwards;
+    }
+
+    .schedule {
+      color: #fff;
+    }
+
+    .sidebar_portfolio {
+      color: #fff;
+      font-family: 700;
+      font-size: 28px;
+      font-weight: 700;
+      font-family: var(--font-whisper);
+    }
+
+    .sidebar_schedule {
+      color: #fff;
+      font-family: 700;
+      font-size: 28px;
+    }
+
+    .nav_bar_close {
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      outline: none;
+      border: none;
+    }
+
+    .portfolio_btn {
+      background: transparent;
+      text-align: left;
+      border: none;
+      outline: none;
+    }
+
+    .sidebar_portfolio {
+      color: #fff;
+      font-family: 700;
+      font-size: 28px;
+    }
+  }
+
+  .logo {
+    opacity: 0;
+    z-index: 1;
+    position: fixed;
+    top: -15px;
+    left: 15px;
+    width: 100px !important;
+    height: 100px !important;
+    transform: none;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.5s;
+
+    background-image: url("../assets/alex_logo_mobile.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .left {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+
+    .portfolio {
+      transform: translate(-40%, -50%);
+      animation: fadeIn 3s forwards;
+      animation-delay: 3s;
+    }
+  }
+
+  .right {
+    background: #111;
+    height: 100%;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+
+    .portfolio {
+      transform: translate(50%, -50%);
+      animation: fadeIn 3s forwards;
+      animation-delay: 3s;
+    }
+  }
+}
