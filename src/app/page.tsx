@@ -2,8 +2,14 @@
 
 import React, { useState } from "react";
 import styles from "./page.module.scss";
-import WhiteArea from "@/components/templates/whiteArea/white-area";
-import DarkArea from "@/components/templates/darkArea/DarkArea";
+// import WhiteArea from "@/components/templates/whiteArea/white-area";
+const WhiteArea = dynamic(() => import("../components/templates/whiteArea/white-area"), {
+  ssr: false,
+});
+// import DarkArea from "@/components/templates/darkArea/DarkArea";
+const DarkArea = dynamic(() => import("../components/templates/darkArea/DarkArea"), {
+  ssr: false,
+});
 import { useSearchParams } from "next/navigation";
 import Sidebar from "@/components/templates/sidebar/Sidebar";
 import white_1 from "@/assets/white/CH_01361-Edit.jpeg";
@@ -19,6 +25,7 @@ import dark_3 from "@/assets/dark/dark_3.jpg";
 import dark_4 from "@/assets/dark/dark_4.jpg";
 import dark_5 from "@/assets/dark/dark_5.jpg";
 import dark_6 from "@/assets/dark/dark_6.jpg";
+import dynamic from "next/dynamic";
 
 const picture_darkArea = [dark_1, dark_2, dark_3, dark_4, dark_5, dark_6];
 
