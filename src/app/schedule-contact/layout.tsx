@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${whisper.variable}`}>
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div>로딩 중 ...</div>}>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
       </Suspense>
     </html>

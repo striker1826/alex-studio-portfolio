@@ -51,7 +51,7 @@ export default function RootLayout({
           content="https://s3.ap-northeast-2.amazonaws.com/battlecode.shop/alex_logo_mobile.jpg"
         />
       </head>
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div>로딩 중...</div>}>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
       </Suspense>
     </html>
