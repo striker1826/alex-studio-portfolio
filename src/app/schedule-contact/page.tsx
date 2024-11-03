@@ -8,7 +8,7 @@ import Footer from "@/components/templates/footer/Footer";
 import { Schedule } from "@/types";
 
 const SchedulePage = async () => {
-  const response = await fetch(`${process.env.BASE_URL}/api/schedule`, {
+  const response = await fetch(`https://alex-studio.vercel.app/api/schedule`, {
     method: "GET",
   });
 
