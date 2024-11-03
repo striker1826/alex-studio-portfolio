@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import { Whisper } from "next/font/google";
-import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -34,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${whisper.variable}`}>
-      <Suspense fallback={<div>로딩 중 ...</div>}>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
-      </Suspense>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
     </html>
   );
 }

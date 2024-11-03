@@ -11,7 +11,7 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const CustomCalendar = () => {
-  const [schedule, setSchedule] = useState<Schedule[]>([]);
+  const [schedule, setSchedule] = useState<Schedule[] | []>([]);
 
   const requestScheduleList = async () => {
     const response = await fetch(`${process.env.BASE_URL}/api/schedule`, {
@@ -114,10 +114,11 @@ const CustomCalendar = () => {
           </div>
         )}
         tileContent={({ date, view }) => {
-          console.log("schedule", schedule);
-          return schedule.map((schedule) => {
-            return view === "month" && date.getDate() === new Date(schedule.date).getDate() ? (
-              <div className="reservation">{joinToNameAndTime(schedule.name, schedule.date)}</div>
+          if (schedule.length === 0) return null; // schedule이 비어 있으면 null 반환
+
+          return schedule.map((scheduleItem) => {
+            return view === "month" && date.getDate() === new Date(scheduleItem.date).getDate() ? (
+              <div className="reservation">{joinToNameAndTime(scheduleItem.name, scheduleItem.date)}</div>
             ) : null;
           });
         }}

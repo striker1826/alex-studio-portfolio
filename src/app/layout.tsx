@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${whisper.variable}`}>
+    <html lang="en" className={`${whisper.variable}`}>
       <head>
         <meta property="og:title" content="ALEX studio" />
         <meta property="og:description" content="ALEX studio" />
@@ -51,9 +51,9 @@ export default function RootLayout({
           content="https://s3.ap-northeast-2.amazonaws.com/battlecode.shop/alex_logo_mobile.jpg"
         />
       </head>
-      <Suspense fallback={<div>로딩 중...</div>}>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
-      </Suspense>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Suspense fallback={<div>로딩 중...</div>}>{children}</Suspense>
+      </body>
     </html>
   );
 }
