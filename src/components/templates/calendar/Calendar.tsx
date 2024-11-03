@@ -101,7 +101,6 @@ const CustomCalendar = ({ schedule }: Props) => {
           </div>
         )}
         tileContent={({ date, view }) => {
-          console.log("schedule", schedule);
           return schedule.map((schedule) => {
             return view === "month" && date.getDate() === new Date(schedule.date).getDate() ? (
               <div className="reservation">{joinToNameAndTime(schedule.name, schedule.date)}</div>
