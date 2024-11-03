@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Whisper } from "next/font/google";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -50,7 +51,9 @@ export default function RootLayout({
           content="https://s3.ap-northeast-2.amazonaws.com/battlecode.shop/alex_logo_mobile.jpg"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <Suspense fallback={<div></div>}>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      </Suspense>
     </html>
   );
 }

@@ -11,6 +11,11 @@ const nextConfig = {
     DB_PASSWORD: process.env.DB_PASSWORD,
     DB_DATABASE: process.env.DB_DATABASE,
   },
+  webpack: (config) => {
+    config.resolve.alias["react-native-sqlite-storage"] = false;
+    config.resolve.alias["@sap/hana-client"] = false;
+    return config;
+  },
 };
 
 export default nextConfig;
