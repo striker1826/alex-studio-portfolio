@@ -80,18 +80,18 @@
   display: flex;
   justify-content: center;
 
-  .portfolio {
-    color: #000;
-    font-size: 36px;
-    font-weight: 700;
-    position: absolute;
-    right: 25%;
-    top: 50%;
-    opacity: 0; /* 처음에는 보이지 않게 설정 */
-    animation: fadeIn 1s forwards;
-    animation-delay: 2.5s;
-    font-family: var(--font-whisper);
-  }
+  // .portfolio {
+  //   color: #000;
+  //   font-size: 36px;
+  //   font-weight: 700;
+  //   position: absolute;
+  //   right: 25%;
+  //   top: 50%;
+  //   opacity: 0; /* 처음에는 보이지 않게 설정 */
+  //   animation: fadeIn 1s forwards;
+  //   animation-delay: 2.5s;
+  //   font-family: var(--font-whisper);
+  // }
 }
 
 .right {
@@ -111,19 +111,19 @@
   animation-delay: 2s; /* 로고 애니메이션이 끝난 후 2초 대기 */
   position: relative;
 
-  .portfolio {
-    color: #fff;
-    font-size: 36px;
-    font-weight: 700;
+  // .portfolio {
+  //   color: #fff;
+  //   font-size: 36px;
+  //   font-weight: 700;
 
-    position: absolute;
-    left: 25%;
-    top: 50%;
-    opacity: 0; /* 처음에는 보이지 않게 설정 */
-    animation: fadeIn 1s forwards;
-    animation-delay: 2.5s;
-    font-family: var(--font-whisper);
-  }
+  //   position: absolute;
+  //   left: 25%;
+  //   top: 50%;
+  //   opacity: 0; /* 처음에는 보이지 않게 설정 */
+  //   animation: fadeIn 1s forwards;
+  //   animation-delay: 2.5s;
+  //   font-family: var(--font-whisper);
+  // }
 }
 
 .nav {
