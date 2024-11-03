@@ -11,7 +11,7 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 interface Props {
-  schedule: Schedule[];
+  schedule: Schedule[] | [];
 }
 
 const CustomCalendar = ({ schedule }: Props) => {
