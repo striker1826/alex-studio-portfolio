@@ -11,14 +11,14 @@ const nextConfig = {
     DB_PASSWORD: process.env.DB_PASSWORD,
     DB_DATABASE: process.env.DB_DATABASE,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve.alias["react-native-sqlite-storage"] = false;
     config.resolve.alias["@sap/hana-client"] = false;
 
+    if (!isServer) {
+      config.optimization.minimize = false;
+    }
     return config;
-  },
-  optimization: {
-    minimize: false,
   },
 };
 
