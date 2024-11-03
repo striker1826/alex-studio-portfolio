@@ -20,7 +20,7 @@ export const connectDatabase = async (): Promise<void> => {
       database: process.env.DB_DATABASE,
       entities: [Photo, Schedule],
       logging: true,
-      synchronize: true,
+      synchronize: false,
     } as ConnectionOptions);
 
     await connection.connect();
