@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "./CustomCalendar.css";
 import Image from "next/image";
@@ -10,11 +10,24 @@ import { Schedule } from "@/types";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-interface Props {
-  schedule: Schedule[] | [];
-}
+const CustomCalendar = () => {
+  const [schedule, setSchedule] = useState<Schedule[]>([]);
 
-const CustomCalendar = ({ schedule }: Props) => {
+  const requestScheduleList = async () => {
+    const response = await fetch(`${process.env.BASE_URL}/api/schedule`, {
+      method: "GET",
+    });
+
+    const scheduleList: { result: Schedule[] } = await response.json();
+    setSchedule(Array.isArray(scheduleList.result) ? scheduleList.result : []);
+
+    return;
+  };
+
+  useEffect(() => {
+    requestScheduleList();
+  }, []);
+
   const [value, onChange] = useState<Value>(new Date());
   const [activeStartDate, setActiveStartDate] = useState(new Date());
 
@@ -101,6 +114,7 @@ const CustomCalendar = ({ schedule }: Props) => {
           </div>
         )}
         tileContent={({ date, view }) => {
+          console.log("schedule", schedule);
           return schedule.map((schedule) => {
             return view === "month" && date.getDate() === new Date(schedule.date).getDate() ? (
               <div className="reservation">{joinToNameAndTime(schedule.name, schedule.date)}</div>
