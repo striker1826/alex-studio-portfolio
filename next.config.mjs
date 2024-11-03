@@ -14,7 +14,11 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias["react-native-sqlite-storage"] = false;
     config.resolve.alias["@sap/hana-client"] = false;
+
     return config;
+  },
+  optimization: {
+    minimize: false,
   },
 };
 
