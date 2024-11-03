@@ -18,7 +18,6 @@ const SchedulePage = async () => {
   // 응답 상태를 확인합니다.
   if (!response.ok) {
     console.error("API 요청 오류:", text);
-    throw new Error(`API 요청 실패: ${response.status}`);
   }
 
   // JSON 파싱을 진행합니다.
