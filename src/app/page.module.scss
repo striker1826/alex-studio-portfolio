@@ -58,7 +58,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-image: url("../assets/alex_logo.gif");
+  background-image: url("../assets/Alex_Logo_PNG.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -309,6 +309,11 @@
     transform: rotateY(0deg); // 카드가 뒤집힐 때의 변환
   }
 
+  .layout {
+    position: relative;
+    display: flex;
+  }
+
   .white {
     animation: none;
 
@@ -423,7 +428,7 @@
 
     .hamburger {
       z-index: 1;
-      position: fixed;
+      position: absolute;
       width: 40px;
       height: 40px;
       top: 15px;
@@ -435,7 +440,7 @@
       opacity: 0;
 
       animation: fadeIn 1s forwards;
-      animation-delay: 1.5s;
+      // animation-delay: 1.5s;
     }
   }
 
@@ -520,16 +525,15 @@
   .logo {
     opacity: 0;
     z-index: 1;
-    position: fixed;
+    position: absolute;
     top: -15px;
     left: 15px;
     width: 100px !important;
     height: 100px !important;
     transform: none;
     animation: fadeIn 1s forwards;
-    animation-delay: 1.5s;
-
-    background-image: url("../assets/alex_logo_mobile.jpg");
+    // animation-delay: 1.5s;
+    background-image: url("../assets/Alex_Logo_PNG.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -541,12 +545,13 @@
     height: 100%;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    animation-delay: 1s;
+    // animation-delay: 1s;
 
     .portfolio {
       transform: translate(-40%, -50%);
       animation: fadeIn 3s forwards;
       animation-delay: 3s;
+      opacity: 0;
     }
   }
 
@@ -555,12 +560,13 @@
     height: 100%;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    animation-delay: 1s;
+    // animation-delay: 1s;
 
     .portfolio {
       transform: translate(50%, -50%);
       animation: fadeIn 3s forwards;
       animation-delay: 3s;
+      opacity: 0;
     }
   }
 }
